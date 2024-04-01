@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Madimi One", sans-serif;
+}
+
+body {
+    background-image: url("quiz-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+}
+
+h1 {
+    letter-spacing: 2px;
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+.container {
+    width: 80%;
+    max-width: 850px;
+    padding: 30px;
+    text-align: center;
+    display: none;
+}
+
+.question {
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* .choices {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 50px;
+    background-color: rgba(38,44,75,0.8);
+    color: rgb(219, 218, 218);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    width: 60%;
+    cursor: pointer;
+} */
+
+.choice {
+    font-size: 20px;
+    background-color: rgba(38, 44, 75, 0.8);
+    color: rgb(219, 218, 218);
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    width: 60%;
+    cursor: pointer;
+    transform: translateY(50%);
+    animation: fade-in 0.7s ease forwards;
+}
+
+.choice:hover {
+    background-color: rgb(24, 28, 48);
+}
+
+
+.btn {
+    width: 20%;
+    font-size: 22px;
+    padding: 12px 20px;
+    margin: 20px auto 0 auto;
+    border: none;
+    border-radius: 5px;
+    /* background-color: rgb(248, 168, 248); */
+    background-color: rgb(58, 245, 245);
+    cursor: pointer;
+}
+
+.btn:hover{
+    /* background-color: rgb(245, 138, 156); */
+    background-color: rgb(14, 175, 175);
+
+}
+
+.choice.selected {
+    background-color: rgb(7, 126, 196);
+}
+
+.scoreCard {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.alert {
+    background-color: rgba(84, 165, 145, 0.6);
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.startBtn {
+    width: 15%;
+    padding-block: 20px;
+    position: relative;
+    top: -170px;
+    font-size: 28px;
+}
+
+.timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: rgb(78, 127, 146);
+    font-size: 28px;
+    /* border: 2px solid orange; */
+    border: 2px solid rgb(14, 175, 175);
+    box-shadow: 0 0 20px 10px rgb(2, 255, 255);
+    /* box-shadow: 0 0 20px 10px orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* adding animation to choice */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+/* adding animation to timer */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+    
+}
+
+/* making app responsive using media queries */
+@media screen and (max-width: 900px) {
+    .container {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    h1 {
+        font-size: 30px;    
+        font-weight: 600;    
+    }
+
+    .container .question {
+        font-size: 22px;
+    }
+
+    .timer {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .startBtn {
+        width: 40%;
+        margin-top: 50px;
+    }
+
+    .nextBtn{
+        width: 40%;
+        margin-top: 5px;
+    }
+
+    .choice {
+        width: 80%;
+        font-size: 18px;
+    }
+}
